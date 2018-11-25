@@ -5,7 +5,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface BookService {
     List<Book> findBookByTerm(String term);
+    List<Book> getAllBooks();
+    Book findBookById(int id);
 }

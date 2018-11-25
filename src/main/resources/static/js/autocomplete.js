@@ -12,7 +12,7 @@ function initAutocomplete(selector, url, enableAddingNewValues) {
         var hasData = false;
         $(selector).select2({
             //Does the user have to enter any data before sending the ajax request
-            minimumInputLength: 2,
+            minimumInputLength: 1,
             ajax: {
                 //How long the user has to pause their typing before sending the next request
                 delay: 250,
@@ -40,7 +40,7 @@ function initAutocomplete(selector, url, enableAddingNewValues) {
                 if (params.term && !hasData) {
                     return {
                         id: params.term,
-                        text: params.term,
+                        name: params.term,
                         newOption: true
                     }
                 }
@@ -49,7 +49,7 @@ function initAutocomplete(selector, url, enableAddingNewValues) {
             templateResult: function (data) {
                 var $result = $("<span></span>");
 
-                $result.text(data.text);
+                $result.text(data.name);
 
                 if (data.newOption) {
                     $result.append(" <em>(new)</em>");
@@ -71,7 +71,7 @@ function abortAutocompleteAjaxQueries() {
 }
 
 $(document).ajaxSend(function (event, jqxhr, settings) {
-    if (settings.url.startsWith(restApiUrl + "/autocomplete")) {
+    if (settings.url.startsWith("/rest/autocomplete")) {
         runningAutocompleteAjaxQueries.push(jqxhr);
     }
 });

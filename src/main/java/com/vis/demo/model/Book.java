@@ -1,16 +1,23 @@
 package com.vis.demo.model;
 
 public class Book {
-    private int id;
+    private String id;
     private String name;
     private String autor;
     private String description;
 
-    public int getId() {
+    public Book(String id, String name, String autor, String description) {
+        this.id = id;
+        this.name = name;
+        this.autor = autor;
+        this.description = description;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

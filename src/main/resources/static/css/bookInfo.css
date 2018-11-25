@@ -1,0 +1,11 @@
+.centering {
+    text-align: center;
+}
+.book-info {
+    border: 3px outset blue;
+    padding-top: 70px;
+    padding-bottom: 40px;
+}
+.myButton{
+    margin-top: 20px;
+}

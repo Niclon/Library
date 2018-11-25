@@ -12,7 +12,9 @@
     top: 45%;
     left: 35%;
     width: 30%;
+    text-align: center;
+    background: lightyellow;
 }
-.search-bar > input {
+.search-bar > select {
     width: 100%;
 }

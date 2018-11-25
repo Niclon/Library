@@ -1,4 +1,4 @@
 package com.vis.demo.dto;
 
-public class somedto {
+public class BookDto {
 }
