@@ -24,7 +24,13 @@ public class AutocompleteController {
     public AutocompleteResponseDto autocompleteBooks(@ModelAttribute AutocompleteRequestDto autocompleteRequestDto){
 
         List<Book> books = bookService.findBookByTerm(autocompleteRequestDto.getSearchTerm());
-        return null;
+        List<AutocompleteItemDto> result = new ArrayList<>();
+
+        for (Book book:books) {
+            result.add(new AutocompleteItemDto(book.getId().toString(),book.getName()));
+        }
+
+        return new AutocompleteResponseDto(result);
 
     }
     @RequestMapping(value = "/allbooks")
@@ -34,7 +40,7 @@ public class AutocompleteController {
         List<AutocompleteItemDto> result = new ArrayList<>();
 
         for (Book book:books) {
-            result.add(new AutocompleteItemDto(book.getId(),book.getName()));
+            result.add(new AutocompleteItemDto(book.getId().toString(),book.getName()));
         }
         return new AutocompleteResponseDto(result);
 

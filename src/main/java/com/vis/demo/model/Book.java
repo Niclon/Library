@@ -1,24 +1,35 @@
 package com.vis.demo.model;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(schema = "db_vis", name = "books")
 public class Book {
-    private String id;
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long bid;
     private String name;
     private String autor;
+    @Column(length = 800)
     private String description;
 
-    public Book(String id, String name, String autor, String description) {
-        this.id = id;
+    public Book() {
+    }
+
+    public Book(Long id, String name, String autor, String description) {
+        this.bid = id;
         this.name = name;
         this.autor = autor;
         this.description = description;
     }
 
-    public String getId() {
-        return id;
+    public void setId(Long id) {
+        this.bid = id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public Long getId() {
+        return bid;
     }
 
     public String getName() {
