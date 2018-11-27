@@ -21,7 +21,7 @@ public class BookController {
         ModelAndView mav = new ModelAndView();
 //        todo change try catch
         try {
-            Book book =  bookService.findBookById(Integer.parseInt(bookId));
+            Book book =  bookService.findBookById(Long.parseLong(bookId));
             mav.addObject("bookId",book.getId());
             mav.addObject("name",book.getName());
             mav.addObject("autor",book.getAutor());

@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface BookService {
     List<Book> findBookByTerm(String term);
-    List<Book> getAllBooks();
-    Book findBookById(int id);
+//    List<Book> getAllBooks();
+    Book findBookById(long id);
 }

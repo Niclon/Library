@@ -15,28 +15,27 @@ public class BookServiceImpl implements BookService {
     @Autowired
     private BookDao bookDao;
 
-    public List<Book> tempBooks = tempCreateBooks();
+//    public List<Book> tempBooks = tempCreateBooks();
     @Override
     public List<Book> findBookByTerm(String term) {
         return bookDao.findBookByTerm(term);
     }
 
-    @Override
-    public List<Book> getAllBooks() {
-        return this.tempBooks;
-    }
+//    @Override
+//    public List<Book> getAllBooks() {
+//        return this.tempBooks;
+//    }
 
     @Override
-    public Book findBookById(int id) {
-//        todo its for test
-        return this.tempBooks.get(id);
+    public Book findBookById(long id) {
+        return bookDao.findBookById(id);
     }
 
-    public List<Book> tempCreateBooks(){
-        List<Book> temp = new ArrayList<>();
-        temp.add(new Book(1L,"Pán prstenů", "J.R.R. Tolkien","toto je trilogie pána prstenů."));
-        temp.add(new Book(2L,"Raz Dva", "Pepa Barot","Toto je kniha o důvodech proč brát věci postupně."));
-        temp.add(new Book(3L,"Příběhy líného studenta Petra", "Petr Vychodil","Tato kniha zobrazuje studiumm Petra na Vysoké škole báňské."));
-        return temp;
-    }
+//    public List<Book> tempCreateBooks(){
+//        List<Book> temp = new ArrayList<>();
+//        temp.add(new Book(1L,"Pán prstenů", "J.R.R. Tolkien","toto je trilogie pána prstenů."));
+//        temp.add(new Book(2L,"Raz Dva", "Pepa Barot","Toto je kniha o důvodech proč brát věci postupně."));
+//        temp.add(new Book(3L,"Příběhy líného studenta Petra", "Petr Vychodil","Tato kniha zobrazuje studiumm Petra na Vysoké škole báňské."));
+//        return temp;
+//    }
 }

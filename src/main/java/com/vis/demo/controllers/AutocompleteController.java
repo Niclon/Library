@@ -33,17 +33,17 @@ public class AutocompleteController {
         return new AutocompleteResponseDto(result);
 
     }
-    @RequestMapping(value = "/allbooks")
-    public AutocompleteResponseDto getAllBooks(@ModelAttribute AutocompleteRequestDto autocompleteRequestDto){
-
-        List<Book> books = bookService.getAllBooks();
-        List<AutocompleteItemDto> result = new ArrayList<>();
-
-        for (Book book:books) {
-            result.add(new AutocompleteItemDto(book.getId().toString(),book.getName()));
-        }
-        return new AutocompleteResponseDto(result);
-
-    }
+//    @RequestMapping(value = "/allbooks")
+//    public AutocompleteResponseDto getAllBooks(@ModelAttribute AutocompleteRequestDto autocompleteRequestDto){
+//
+//        List<Book> books = bookService.getAllBooks();
+//        List<AutocompleteItemDto> result = new ArrayList<>();
+//
+//        for (Book book:books) {
+//            result.add(new AutocompleteItemDto(book.getId().toString(),book.getName()));
+//        }
+//        return new AutocompleteResponseDto(result);
+//
+//    }
 
 }
