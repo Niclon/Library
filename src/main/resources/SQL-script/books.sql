@@ -23,6 +23,13 @@ VALUES (10,'Victor Hugo', 'Historický román odehrávající se v Paříži v 1
 
 
 
+INSERT INTO customers (cid, email, login, name, password, surname) VALUES(1,'abcd@gmail.com','abcd','Pepa','Pepa','Tovar')
+INSERT INTO customers (cid, email, login, name, password, surname) VALUES(2,'user@gmail.com','user','Petr','user','Vychodil')
+INSERT INTO customers (cid, email, login, name, password, surname) VALUES(3,'lopata@gmail.com','ryc','Honza','lopata','Lafatra')
+
+
+
+
 
 
 

@@ -11,6 +11,10 @@ import java.util.List;
 
 @Repository
 public class BookDaoImpl extends HibernateDao implements BookDao {
+
+
+
+//    usage of entity on model classes
     public List<Book> findBookByTerm(String term) {
         Criteria bookCriteria = getSession().createCriteria(Book.class).add(Restrictions.ilike("name", term + "%"));
         return bookCriteria.list();

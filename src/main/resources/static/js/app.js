@@ -7,9 +7,6 @@ $(document).ready(function () {
 
 function addSelect2Event() {
     $(document).on('mouseup', '.select2-container--open .select2-results__option', function (e) {
-        window.location.href += "/bookdetail/" + $('#bookSearch').val();
+        window.location.href += "bookdetail/" + $('#bookSearch').val();
     });
-}
-function initSelect2(selector) {
-    $(selector).select2();
 }

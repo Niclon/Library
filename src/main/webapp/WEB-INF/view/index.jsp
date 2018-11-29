@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: pvychodil
@@ -32,7 +33,12 @@
                             <li class="nav-item"><a class="nav-link" href="#">O knihovně</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Služby</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Kontakty</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Přihlášení</a></li>
+                            <c:if test="${!loggedIn}">
+                                <li class="nav-item"><a class="nav-link" href="/account/loginpage">Přihlášení</a></li>
+                            </c:if>
+                            <c:if test="${loggedIn}">
+                                <li class="nav-item"><a class="nav-link" href="/account/logout">Odhlášení</a></li>
+                            </c:if>
                         </ul>
                     </div>
                 </div>
