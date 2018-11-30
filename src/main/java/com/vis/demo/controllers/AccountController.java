@@ -66,4 +66,12 @@ public class AccountController {
         return new ModelAndView("index");
     }
 
+    @RequestMapping(value = "/loginSuccess", method = RequestMethod.GET)
+    public ModelAndView loginSuccess(HttpSession session, ModelMap modelMap) {
+        session.setAttribute("loggedIn",true);
+        modelMap.addAttribute("loggedIn",true);
+        return new ModelAndView("index");
+    }
+
+
 }

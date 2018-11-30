@@ -14,7 +14,8 @@ function createAjaxLoginRequest() {
         url: "/account/login",
         data : JSON.stringify(loginDto),
         success: function() {
-            // alert("Přihlášení proběhlo úspěšně");
+            alert("Přihlášení proběhlo úspěšně");
+            window.location.replace("localhost:8090/");
         },
         error: function (xhr, status, error) {
             // alert('Špatné jméno nebo heslo' );
