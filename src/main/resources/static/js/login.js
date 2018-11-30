@@ -2,7 +2,6 @@
 function createAjaxLoginRequest() {
     var email = $('#email').val();
     var password = $('#password').val();
-    console.log("clicked");
     var loginDto = {
         email: email,
         password: password
@@ -14,11 +13,13 @@ function createAjaxLoginRequest() {
         url: "/account/login",
         data : JSON.stringify(loginDto),
         success: function() {
+            setTimeout(function(){ window.location.href = "http://localhost:8090/"; }, 1500);
             alert("Přihlášení proběhlo úspěšně");
-            window.location.replace("localhost:8090/");
+
+
         },
         error: function (xhr, status, error) {
-            // alert('Špatné jméno nebo heslo' );
+            alert('Špatné jméno nebo heslo' );
 
         }
     })

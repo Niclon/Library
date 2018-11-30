@@ -3,6 +3,7 @@ package com.vis.demo.controllers;
 import com.vis.demo.dto.LoginDto;
 import com.vis.demo.services.Interfaces.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,8 @@ public class AccountController {
 
     @Autowired
     AccountService accountService;
+
+    private static String LoggedIn = "loggedIn";
 
     @RequestMapping(value = "/loginpage", method = RequestMethod.GET)
     public String login(HttpSession session, ModelMap modelMap) {
@@ -47,29 +50,27 @@ public class AccountController {
         ModelAndView mav = new ModelAndView();
         mav.addAllObjects(modelMap);
         if (accountService.checkIfEmailAndPasswordAreSame(loginDto)){
-            session.setAttribute("loggedIn",true);
-            modelMap.addAttribute("loggedIn",true);
-//            todo doesnt work redirect
-//            response.sendRedirect("redirect:/");
-//            mav.setViewName("redirect:/");
-            response.setStatus(200);
+            session.setAttribute(LoggedIn,true);
+            modelMap.addAttribute(LoggedIn,true);
+            mav.setViewName("redirect:/");
             return mav;
         }
-        modelMap.addAttribute("loggedIn",false);
-        response.setStatus(401);
+        modelMap.addAttribute(LoggedIn,false);
+//        response.setStatus(401);
+        mav.setStatus(HttpStatus.NOT_ACCEPTABLE);
         return mav;
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public ModelAndView logout(HttpSession session) {
-        session.removeAttribute("loggedIn");
-        return new ModelAndView("index");
+        session.removeAttribute(LoggedIn);
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/loginSuccess", method = RequestMethod.GET)
     public ModelAndView loginSuccess(HttpSession session, ModelMap modelMap) {
-        session.setAttribute("loggedIn",true);
-        modelMap.addAttribute("loggedIn",true);
+        session.setAttribute(LoggedIn,true);
+        modelMap.addAttribute(LoggedIn,true);
         return new ModelAndView("index");
     }
 

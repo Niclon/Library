@@ -30,7 +30,7 @@
                 <div class="navbar-collapse navbar-right justify-content-md-end">
                     <div>
                         <ul class="nav navbar-nav navbar-right ">
-                            <li class="nav-item"><a class="nav-link" href="#">O knihovně</a></li>
+                            <li class="nav-item"><a class="nav-link" href="http://localhost:8090/">O knihovně</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Služby</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Kontakty</a></li>
                             <c:if test="${!loggedIn}">

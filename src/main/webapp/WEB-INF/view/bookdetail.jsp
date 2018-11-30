@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: pvychodil
@@ -17,6 +18,7 @@
 
     <script>
         var bookId = ${bookId};
+        <%--var avability = ${avalibility};--%>
     </script>
 </head>
 <body>
@@ -28,10 +30,15 @@
                 <div class="navbar-collapse navbar-right justify-content-md-end">
                     <div>
                         <ul class="nav navbar-nav navbar-right ">
-                            <li class="nav-item"><a class="nav-link" href="#">O knihovně</a></li>
+                            <li class="nav-item"><a class="nav-link" href="http://localhost:8090/">O knihovně</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Služby</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Kontakty</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Přihlášení</a></li>
+                            <c:if test="${!loggedIn}">
+                                <li class="nav-item"><a class="nav-link" href="/account/loginpage">Přihlášení</a></li>
+                            </c:if>
+                            <c:if test="${loggedIn}">
+                                <li class="nav-item"><a class="nav-link" href="/account/logout">Odhlášení</a></li>
+                            </c:if>
                         </ul>
                     </div>
                 </div>
@@ -51,9 +58,9 @@
 
                 </div>
                 <div class="col-md-2">
-                    <button class="btn btn-primary btn-lg btn-block myButton">Sledování</button>
-                    <button class="btn btn-primary btn-lg btn-block myButton">Rezervace</button>
-                    <p> Stav: ${avalibility} dodělat!!!!</p>
+                    <button class="btn btn-primary btn-lg btn-block myButton"  ${disability}>Sledování</button>
+                    <button class="btn btn-primary btn-lg btn-block myButton"  ${disability}>Rezervace</button>
+                    <%--<p> Stav: ${avalibility} dodělat!!!!</p>--%>
                 </div>
 
             </div>

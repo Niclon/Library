@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class BookController {
 
@@ -17,10 +19,13 @@ public class BookController {
     BookService bookService;
 
     @RequestMapping(value = "/bookdetail/{bookId}", method = RequestMethod.GET)
-    public ModelAndView getBookDetail(@PathVariable("bookId") String bookId){
+    public ModelAndView getBookDetail(@PathVariable("bookId") String bookId, HttpSession session){
         ModelAndView mav = new ModelAndView();
 //        todo change try catch
         try {
+            if (session.getAttribute("loggedIn") == null){
+                mav.addObject("disability","disabled");
+            }
             Book book =  bookService.findBookById(Long.parseLong(bookId));
             mav.addObject("bookId",book.getId());
             mav.addObject("name",book.getName());
