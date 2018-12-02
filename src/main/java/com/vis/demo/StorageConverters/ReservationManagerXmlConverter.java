@@ -1,8 +1,6 @@
 package com.vis.demo.StorageConverters;
 
-import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
 import com.vis.demo.XmlManager.ReservationManager;
-import com.vis.demo.model.AbstractPerson;
 import com.vis.demo.model.Reservation;
 
 import javax.xml.bind.JAXBContext;
@@ -10,8 +8,6 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ReservationManagerXmlConverter {
 

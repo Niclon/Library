@@ -6,7 +6,6 @@ import com.vis.demo.model.Customer;
 import com.vis.demo.services.Interfaces.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sun.rmi.runtime.Log;
 
 @Service
 public class AccountServiceImpl implements AccountService {
