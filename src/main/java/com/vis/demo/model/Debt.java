@@ -1,20 +1,28 @@
 package com.vis.demo.model;
 
+import com.vis.demo.XmlIdGenerator;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
 
-//to XML
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Debt {
     public long did;
+    @XmlElement(name="dateOfPay")
     public LocalDate dateOfPay;
     public int money;
 
     public Debt() {
     }
 
-    public Debt(long did, LocalDate dateOfPay, int money) {
-        this.did = did;
+    public Debt( LocalDate dateOfPay, int money) {
+        this.did =  XmlIdGenerator.getNewDid();
         this.dateOfPay = dateOfPay;
         this.money = money;
     }

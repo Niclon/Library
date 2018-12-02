@@ -22,4 +22,13 @@ public class CustomerDaoImpl extends HibernateDao implements CustomerDao {
 
         return new LoginDto(customer.getEmail(),customer.getPassword());
     }
+
+    @Override
+    public Customer getCustomerByEmail(String email) {
+        Criteria loginCriteria = getSession().createCriteria(Customer.class).add(Restrictions.eq("email", email));
+        if (loginCriteria.list().isEmpty()){
+            return null;
+        }
+        return (Customer) loginCriteria.list().get(0);
+    }
 }

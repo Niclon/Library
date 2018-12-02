@@ -12,6 +12,13 @@ public class Order {
     public LocalDate bookOrderDate;
     public LocalDate exceptedBookOrderReturnDate;
     public LocalDate bookOrderReturnDate;
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="kid")
+    public Book book;
+    @ManyToOne
+    @JoinColumn(name="cid")
+    public Customer customer;
+
 
     public Order() {
     }
@@ -52,5 +59,21 @@ public class Order {
 
     public void setBookOrderReturnDate(LocalDate bookOrderReturnDate) {
         this.bookOrderReturnDate = bookOrderReturnDate;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

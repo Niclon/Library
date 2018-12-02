@@ -2,6 +2,7 @@ package com.vis.demo.services.Implemetation;
 
 import com.vis.demo.dao.CustomerDao;
 import com.vis.demo.dto.LoginDto;
+import com.vis.demo.model.Customer;
 import com.vis.demo.services.Interfaces.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,11 @@ public class AccountServiceImpl implements AccountService {
             return false;
         }
         return checkIfBothLoginDtoAreSame(fromRequest,loginFromDb);
+    }
+
+    @Override
+    public Customer getCustomerByEmail(String email) {
+        return customerDao.getCustomerByEmail(email);
     }
 
     private boolean checkIfBothLoginDtoAreSame(LoginDto dto1,LoginDto dto2){

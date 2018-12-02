@@ -1,54 +1,65 @@
 package com.vis.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import com.vis.demo.XmlIdGenerator;
+import com.vis.demo.adapters.LocalDateAdapter;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters;
 import java.time.LocalDate;
 
-// to xml
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Reservation {
     private long rid;
-    public LocalDate EndDateOfReservation;
-    private Customer customer;
-    private Book book;
+    @XmlElement(name="endDateOfReservation")
+    public LocalDate endDateOfReservation;
+    private long cid;
+    private long bid;
 
     public Reservation() {
     }
 
-    public Reservation(LocalDate endDateOfReservation, Customer customer, Book book) {
-        EndDateOfReservation = endDateOfReservation;
-        this.customer = customer;
-        this.book = book;
+    public Reservation(LocalDate endDateOfReservation, long cid, long bid) {
+        rid=XmlIdGenerator.getNewRid();
+        this.endDateOfReservation = endDateOfReservation;
+        this.cid = cid;
+        this.bid = bid;
     }
 
-    public long getId() {
-        return rid;
-    }
-
-    public void setId(long id) {
-        this.rid = id;
-    }
-
+//    @XmlElement(name="endDateOfReservation")
     public LocalDate getEndDateOfReservation() {
-        return EndDateOfReservation;
+        return endDateOfReservation;
     }
 
     public void setEndDateOfReservation(LocalDate endDateOfReservation) {
-        EndDateOfReservation = endDateOfReservation;
+        this.endDateOfReservation = endDateOfReservation;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public long getRid() {
+        return rid;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setRid(long rid) {
+        this.rid = rid;
     }
 
-    public Book getBook() {
-        return book;
+    public long getCid() {
+        return cid;
     }
 
-    public void setBook(Book book) {
-        this.book = book;
+    public void setCid(long cid) {
+        this.cid = cid;
+    }
+
+    public long getBid() {
+        return bid;
+    }
+
+    public void setBid(long bid) {
+        this.bid = bid;
     }
 }

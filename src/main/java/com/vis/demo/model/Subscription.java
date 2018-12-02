@@ -1,44 +1,48 @@
 package com.vis.demo.model;
 
+import com.vis.demo.XmlIdGenerator;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
 
-// to xml
+@XmlRootElement
 public class Subscription {
     private long sid;
-    private Customer customer;
-    private Book book;
+    private long cid;
+    private long bid;
 
     public Subscription() {
     }
 
-    public Subscription(LocalDate endDateOfReservation, Customer customer, Book book) {
-        this.customer = customer;
-        this.book = book;
+    public Subscription(long cid, long bid) {
+        this.sid = XmlIdGenerator.getNewSid();
+        this.cid = cid;
+        this.bid = bid;
     }
 
-    public long getId() {
+    public long getSid() {
         return sid;
     }
 
-    public void setId(long id) {
-        this.sid = id;
+    public void setSid(long sid) {
+        this.sid = sid;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public long getCid() {
+        return cid;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCid(long cid) {
+        this.cid = cid;
     }
 
-    public Book getBook() {
-        return book;
+    public long getBid() {
+        return bid;
     }
 
-    public void setBook(Book book) {
-        this.book = book;
+    public void setBid(long bid) {
+        this.bid = bid;
     }
 }

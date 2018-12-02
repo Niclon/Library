@@ -51,6 +51,7 @@ public class AccountController {
         mav.addAllObjects(modelMap);
         if (accountService.checkIfEmailAndPasswordAreSame(loginDto)){
             session.setAttribute(LoggedIn,true);
+            session.setAttribute("email",loginDto.getEmail());
             modelMap.addAttribute(LoggedIn,true);
             mav.setViewName("redirect:/");
             return mav;

@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../css/bookInfo.css">
     <script src="../js/libs/jquery.js"></script>
     <script src="../js/libs/bootstrap.js"></script>
+    <script src="../js/bookdetail.js"></script>
 
 
     <script>
@@ -58,8 +59,8 @@
 
                 </div>
                 <div class="col-md-2">
-                    <button class="btn btn-primary btn-lg btn-block myButton"  ${disability}>Sledování</button>
-                    <button class="btn btn-primary btn-lg btn-block myButton"  ${disability}>Rezervace</button>
+                    <button id="SubscriptionButton" class="btn btn-primary btn-lg btn-block myButton"  ${disability}>Sledování</button>
+                    <button id="ReservationButton" class="btn btn-primary btn-lg btn-block myButton"  ${disability}>Rezervace</button>
                     <%--<p> Stav: ${avalibility} dodělat!!!!</p>--%>
                 </div>
 
