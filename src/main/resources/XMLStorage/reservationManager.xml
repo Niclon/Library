@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<reservationManager>
+    <reservation>
+        <rid>3</rid>
+        <endDateOfReservation>2018-12-02</endDateOfReservation>
+        <cid>2</cid>
+        <bid>1</bid>
+    </reservation>
+    <reservation>
+        <rid>1</rid>
+        <endDateOfReservation>2018-12-02</endDateOfReservation>
+        <cid>2</cid>
+        <bid>6</bid>
+    </reservation>
+</reservationManager>

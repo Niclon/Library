@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<subscriptionManager>
+    <subscription>
+        <bid>1</bid>
+        <cid>2</cid>
+        <sid>3</sid>
+    </subscription>
+    <subscription>
+        <bid>3</bid>
+        <cid>2</cid>
+        <sid>1</sid>
+    </subscription>
+</subscriptionManager>
