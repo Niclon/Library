@@ -14,6 +14,7 @@ import java.time.LocalDate;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Debt {
     public long did;
+    public long cid;
     @XmlElement(name="dateOfPay")
     public LocalDate dateOfPay;
     public int money;
@@ -21,7 +22,7 @@ public class Debt {
     public Debt() {
     }
 
-    public Debt( LocalDate dateOfPay, int money) {
+    public Debt( LocalDate dateOfPay, int money, long cid) {
         this.did =  XmlIdGenerator.getNewDid();
         this.dateOfPay = dateOfPay;
         this.money = money;
@@ -49,5 +50,13 @@ public class Debt {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    public long getCid() {
+        return cid;
+    }
+
+    public void setCid(long cid) {
+        this.cid = cid;
     }
 }

@@ -13,9 +13,9 @@ public class Order {
     public LocalDate exceptedBookOrderReturnDate;
     public LocalDate bookOrderReturnDate;
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="kid")
+    @JoinColumn(name="bid")
     public Book book;
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="cid")
     public Customer customer;
 
