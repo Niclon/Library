@@ -61,7 +61,7 @@
                 <div class="col-md-2">
                     <button id="SubscriptionButton" class="btn btn-primary btn-lg btn-block myButton"  ${disability}>Sledování</button>
                     <button id="ReservationButton" class="btn btn-primary btn-lg btn-block myButton"  ${disability}>Rezervace</button>
-                    <%--<p> Stav: ${avalibility} dodělat!!!!</p>--%>
+                    <p> Stav: V knihovně</p>
                 </div>
 
             </div>
