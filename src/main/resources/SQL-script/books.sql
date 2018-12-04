@@ -28,7 +28,7 @@ INSERT INTO customers (cid, email, login, name, password, surname) VALUES(1,'abc
 INSERT INTO customers (cid, email, login, name, password, surname) VALUES(2,'user@gmail.com','user','Petr','user','Vychodil')
 INSERT INTO customers (cid, email, login, name, password, surname) VALUES(3,'lopata@gmail.com','ryc','Honza','lopata','Lafatra')
 
-INSERT INTO orders (oid,bookOrderDate,bookOrderReturnDate,bid,cid)
+INSERT INTO orders (oid,bookOrderDate,exceptedBookOrderReturnDate,bid,cid)
 VALUES (1,'2018-2-08', '2018-3-08' , 2,2 );
 INSERT INTO orders (oid,bookOrderDate,bookOrderReturnDate,exceptedBookOrderReturnDate,bid,cid)
 VALUES (2,'2018-2-08', '2018-3-08' , '2018-2-18', 2,2 );

@@ -6,16 +6,23 @@ public class OrderDetailDto {
     public String name;
     public String surname;
     public String bookName;
-    public LocalDate dateOfExpectedReturn;
+    public String dateOfExpectedReturn;
 
     public OrderDetailDto() {
     }
 
-    public LocalDate getDateOfExpectedReturn() {
+    public OrderDetailDto(String name, String surname, String bookName, String dateOfExpectedReturn) {
+        this.name = name;
+        this.surname = surname;
+        this.bookName = bookName;
+        this.dateOfExpectedReturn = dateOfExpectedReturn;
+    }
+
+    public String getDateOfExpectedReturn() {
         return dateOfExpectedReturn;
     }
 
-    public void setDateOfExpectedReturn(LocalDate dateOfExpectedReturn) {
+    public void setDateOfExpectedReturn(String dateOfExpectedReturn) {
         this.dateOfExpectedReturn = dateOfExpectedReturn;
     }
 
@@ -41,5 +48,13 @@ public class OrderDetailDto {
 
     public void setBookName(String bookName) {
         this.bookName = bookName;
+    }
+
+    @Override
+    public String toString() {
+        return  "Jméno='" + name + '\'' +
+                ", Přijmení='" + surname + '\'' +
+                ", název knihy='" + bookName + '\'' +
+                ", předpokládané vrácení='" + dateOfExpectedReturn + '\'';
     }
 }

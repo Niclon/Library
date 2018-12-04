@@ -13,7 +13,7 @@ public class OrderRestController {
     @Autowired
     OrderService orderService;
 
-    @RequestMapping(value = "/getcustomerdetail/order/{userId}")
+    @RequestMapping(value = "/getorderdetail/order/{userId}")
     public OrderDetailDto getLastOrder(@PathVariable("userId") String userId){
         return orderService.getLastOrderDetail(Long.parseLong(userId));
     }
