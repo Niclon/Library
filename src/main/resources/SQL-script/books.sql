@@ -20,12 +20,21 @@ INSERT INTO books (bid,autor, description, name)
 VALUES (9,'Anthony Doerr', 'David Winkler, tichý chlapec okouzlený nestálostí počasí a posedlý sněhem, žije na Aljašce ve městě Anchorage. Někdy vidí události ještě předtím, než se stanou: muže s krabicí na klobouky srazí autobus, sám David se v supermarketu zamiluje do krásné ženy.', 'O dívce Grace');
 INSERT INTO books (bid,autor, description, name)
 VALUES (10,'Victor Hugo', 'Historický román odehrávající se v Paříži v 15. století za vlády Ludvíka XI., vystavěný v chronologické kompozici s v romantismu obvyklými prvky retardace. Victor Hugo čtenáře zavede do dokonale vykreslené atmosféry patnáctého století a seznámí nás s tragickým příběhem znetvořeného Quasimoda, krásné Esmeraldy a proradným knězem Frollem.', 'Chrám Matky Boží v Paříži');
-
+INSERT INTO books (bid,autor, description, name)
+VALUES (11,'Patolog', 'toto je random kniha', 'Prasátko Pepa');
 
 
 INSERT INTO customers (cid, email, login, name, password, surname) VALUES(1,'abcd@gmail.com','abcd','Pepa','Pepa','Tovar')
 INSERT INTO customers (cid, email, login, name, password, surname) VALUES(2,'user@gmail.com','user','Petr','user','Vychodil')
 INSERT INTO customers (cid, email, login, name, password, surname) VALUES(3,'lopata@gmail.com','ryc','Honza','lopata','Lafatra')
+
+INSERT INTO orders (oid,bookOrderDate,bookOrderReturnDate,bid,cid)
+VALUES (1,'2018-2-08', '2018-3-08' , 2,2 );
+INSERT INTO orders (oid,bookOrderDate,bookOrderReturnDate,exceptedBookOrderReturnDate,bid,cid)
+VALUES (2,'2018-2-08', '2018-3-08' , '2018-2-18', 2,2 );
+
+
+
 
 
 
